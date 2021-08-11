@@ -1,0 +1,21 @@
+@=
+projectType="application_plugin";
+projectName="vr_vol_view";
+projectGUID="5D5566EA-2F85-466B-B990-CECEBCEA1E00";
+addProjectDirs=[CGV_DIR."/libs", CGV_DIR."/plugins", CGV_DIR."/test", CGV_DIR."/3rd", INPUT_DIR."/../../libs", INPUT_DIR."/.."];
+addIncDirs=[CGV_DIR."/libs", INPUT_DIR."/../../libs", CGV_BUILD_DIR."/".projectName];
+addProjectDeps=[
+	"cgv_utils", "cgv_type", "cgv_reflect", "cgv_data", "cgv_signal", "cgv_base", "cgv_media", "cgv_gui", "cgv_render","cgv_os",
+	"cgv_reflect_types", "vol_view_lib", "cgv_gl", "cg_vr",
+	"cgv_viewer",
+	"cg_fltk", "crg_light", "cmi_io", "cmv_avi", "crg_grid", "cg_icons", "glew", "plot", "vol_viz",
+	"crg_vr_view", "vr_lab", "vr_emulator", "openvr_driver"
+];
+if(SYSTEM=="windows") {
+	addStaticDefines=["REGISTER_SHADER_FILES"];
+}
+addSharedDefines=["CGV_VR_VOL_VIEW_EXPORTS"];
+addCommandLineArguments=[
+	after('"type(shader_config):shader_path='."'".INPUT_DIR."/../../libs/vol_viz;".INPUT_DIR."/glsl;".CGV_DIR."/libs/plot/glsl;".CGV_DIR."/libs/cgv_gl/glsl'".'"',"cg_fltk"),
+	'"config:'.INPUT_DIR.'/config.cfg"'
+];

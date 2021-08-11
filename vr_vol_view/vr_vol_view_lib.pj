@@ -1,0 +1,14 @@
+@=
+projectType="library";
+projectName="vr_vol_view_lib";
+projectGUID="EF1E13A3-3A7D-41FE-D4B3-DAB6EB14EDA5";
+addProjectDirs=[CGV_DIR."/libs", CGV_DIR."/plugins", CGV_DIR."/test", CGV_DIR."/3rd", INPUT_DIR."/../../libs", INPUT_DIR."/../vol_view"];
+addIncDirs=[CGV_DIR."/libs", INPUT_DIR."/../../libs"];
+addProjectDeps=[
+	"cgv_utils", "cgv_type", "cgv_reflect", "cgv_data", "cgv_signal", "cgv_base", "cgv_media", "cgv_gui", "cgv_render","cgv_os",
+	"cgv_reflect_types", "vol_view_lib", "cgv_gl", "cg_vr",
+	"glew", "plot", "vol_viz",
+	"crg_vr_view", "vr_lab", "vr_emulator", "openvr_driver"
+];
+addSharedDefines=["CGV_VR_VOL_VIEW_EXPORTS"];
+addDefines=["NO_VR_VOLUME_VIEWER_INSTANCE"];
